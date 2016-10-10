@@ -45,7 +45,7 @@ if test ! "$BB_USE_PIP"; then
     BB_USE_PIP=0
 fi
 if test ! "$BB_URL"; then
-    BB_URL="https://raw.githubusercontent.com/opensfs/lustre-buildbot-config/master/scripts/"
+    BB_URL="https://raw.githubusercontent.com/dinatale2/lustre-buildbot-config/Live/scripts/"
 fi
 
 if test ! -f /etc/buildslave; then
@@ -78,6 +78,8 @@ testbin () {
     return 0
 }
 
+TWISTED_VER="twisted==16.4.1"
+
 case "$BB_NAME" in
 Amazon*)
     yum -y install deltarpm gcc python-pip python-devel
@@ -102,7 +104,7 @@ CentOS*)
         BUILDSLAVE="/usr/bin/buildslave"
     else
         yum -y install deltarpm gcc python-pip python-devel
-        easy_install --quiet buildbot-slave
+        easy_install --quiet $TWISTED_VER buildbot-slave
         BUILDSLAVE="/usr/bin/buildslave"
     fi
 

@@ -69,7 +69,7 @@ export BB_PASSWORD='%s'
 export BB_URL='%s'
 
 if [ -z "$BB_URL" ]; then
-    export BB_URL="https://raw.githubusercontent.com/opensfs/lustre-buildbot-config/master/scripts/"
+    export BB_URL="https://raw.githubusercontent.com/dinatale2/lustre-buildbot-config/Live/scripts/"
 fi
 
 # Get the runurl utility.
