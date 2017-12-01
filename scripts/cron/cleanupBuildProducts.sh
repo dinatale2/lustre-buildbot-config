@@ -13,7 +13,7 @@ fi
 pushd $BUILDPRODDIR
 
 # clean up the patchset folders that were created more than 14 days ago
-find -depth -regex "\./[0-9]+/[0-9]+" -type d -ctime +14 -print0 | xargs --null rm -rvf
+find -depth -regex "\./[0-9]+/[0-9]+" -type d -ctime +7 -print0 | xargs --null rm -rvf
 
 # remove empty change folders
 rmdir $BUILDPRODDIR/* 2>/dev/null
